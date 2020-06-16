@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+# dataSource数据源
+driverClass: com.mysql.cj.jdbc.Driver
+user: root
+password: root
+jdbcUrl: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+
