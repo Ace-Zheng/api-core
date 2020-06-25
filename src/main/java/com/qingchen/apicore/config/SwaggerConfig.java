@@ -1,4 +1,4 @@
-package com.qingchen.apicore;
+package com.qingchen.apicore.config;
 
 import io.swagger.annotations.Contact;
 import org.springframework.context.annotation.Bean;

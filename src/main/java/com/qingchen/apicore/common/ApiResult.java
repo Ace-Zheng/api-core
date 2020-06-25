@@ -10,7 +10,6 @@ import java.io.Serializable;
  */
 public class ApiResult<T> implements Serializable {
     private static final long serialVersionUID = 9211889136173018364L;
-
     /**
      * 正常响应码
      */
@@ -22,6 +21,8 @@ public class ApiResult<T> implements Serializable {
     private static final String SUCCESS_MSG = "success";
 
     private String code = SUCCESS_CODE;
+
+    private String traceId;
 
     private String msg = SUCCESS_MSG;
 
@@ -63,6 +64,10 @@ public class ApiResult<T> implements Serializable {
      */
     public static ApiResult isFail(BaseEnumError error) {
         return isFail(error.getCode(), error.getMsg());
+    }
+
+    public static ApiResult isFail(BizException bizException) {
+        return isFail(bizException.getCode(), bizException.getMessage());
     }
 
     /**
@@ -135,5 +140,13 @@ public class ApiResult<T> implements Serializable {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public String getTraceId() {
+        return traceId;
+    }
+
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
     }
 }
